@@ -1,0 +1,68 @@
+
+<script type="text/javascript" src="/dependencies/sails.io.js"></script>
+<script type="text/javascript">
+    // newSailsSocket = io.sails.connect();
+
+    
+    io.socket.on('connect', function onConnect(){
+        console.log('This socket is now connected to the Sails server.');
+    });
+
+    // get socket connected id
+    io.socket.get('/getsocketid', function(response) {
+        console.log('id.',response);
+    });
+
+    //join room
+    // io.socket.get('/joinroom',function(res){
+    //     console.log('I join ',res);
+    // });
+
+    io.socket.request({
+        method: 'get',
+        url: '/joinroom',
+        data: {
+            roomName: "room1"
+        },
+        headers: {
+            // 'x-csrf-token': 'ji4brixbiub3'
+        }
+        }, function (resData, jwres) {
+        if (jwres.error) {
+            console.log(jwres.statusCode); // => e.g. 403
+            return;
+        }
+        console.log(resData.message);
+        console.log(jwres.statusCode); // => e.g. 200
+
+    });
+
+
+    // io.socket.get('/users/9', function (resData) {
+    //     resData; // => {id:9, name: 'Timmy Mendez'}
+    // });
+
+    // get broadcast message from message event
+    io.socket.on('message', function(message) {
+        alert('The server has a message for you: ' + message);
+    })
+
+
+    // Listen for new chat messages
+    // io.socket.on('chatmessage', function(body) {
+    //     renderChatMessages(body.data);
+    // });
+
+    io.socket.on('disconnect', function onDisconnect(){
+        console.log('This socket lost connection to the Sails server');
+        // io.socket.reconnect();
+    });
+
+    // io.socket.reconnect();
+
+    if(io.socket.isConnecting()){
+        console.log(" is connecting !");
+    }
+
+</script>
+    <h3>Socket Work...</h3>

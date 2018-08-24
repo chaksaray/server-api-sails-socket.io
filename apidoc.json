@@ -1,0 +1,8 @@
+{
+    "name": "Cotafer API",
+    "version": "0.1.0",
+    "description": "ApiDoc for Cotafer Website",
+    "title": "Cotafer  API",
+    "url": "http://localhost:1337",
+    "sampleUrl": "http://localhost:1337"
+}

@@ -1,0 +1,16 @@
+define({
+  "name": "Cotafer API",
+  "version": "0.1.0",
+  "description": "ApiDoc for Cotafer Website",
+  "title": "Cotafer  API",
+  "url": "http://localhost:1337",
+  "sampleUrl": "http://localhost:1337",
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "apidoc",
+    "time": "2018-08-20T09:37:52.318Z",
+    "url": "http://apidocjs.com",
+    "version": "0.17.6"
+  }
+});
