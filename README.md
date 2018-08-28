@@ -1,4 +1,4 @@
-# cotafer-api
+# server-api-sails-socket.io
 
 a [Sails v1](https://sailsjs.com) application
 
